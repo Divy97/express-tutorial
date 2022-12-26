@@ -4,17 +4,23 @@ const PORT = process.env.PORT || 3000;
 
 const path = require("path");
 
+app.set("view engine", "ejs");
 app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname) + "/index.html");
+  res.render("index", {
+    title: "Home Page",
+  });
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile(path.resolve(__dirname) + "/about.html");
+  res.render("about", {
+    title: "About Page",
+  });
 });
 
 app.get("/download", (req, res) => {
-  res.download(path.resolve(__dirname) + "/about.html");
+  res.download(path.resolve(__dirname) + "/views/about.ejs");
 });
 
 app.listen(PORT, () => {
