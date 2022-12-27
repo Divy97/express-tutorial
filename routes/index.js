@@ -24,17 +24,17 @@ router.get("/download", (req, res) => {
   );
 });
 
-router.get("/api/products", apiKeyMiddleware, (req, res) => {
-  res.json([
-    {
-      id: "111",
-      product: "chrome",
-    },
-    {
-      id: "222",
-      product: "fire-fox",
-    },
-  ]);
-});
+// router.get("/api/products", apiKeyMiddleware, (req, res) => {
+//   res.json([
+//     {
+//       id: "111",
+//       product: "chrome",
+//     },
+//     {
+//       id: "222",
+//       product: "fire-fox",
+//     },
+//   ]);
+// });
 
 module.exports = router;
